@@ -383,13 +383,11 @@ AppAsset::register($this);
             )
         ],
     ]);
-    NavBar::end();*/
-    ?>
-        <?/*= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ])*/ ?>
-        <?//= Alert::widget() ?>
-        <?= $content ?>
+    NavBar::end();
+
+      <?= Breadcrumbs::widget([ 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [], ])  ?>
+      <?= Alert::widget() ?>
+      <?= $content */ ?>
 
 <?php $this->endBody() ?>
 </body>
