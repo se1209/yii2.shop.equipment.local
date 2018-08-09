@@ -765,7 +765,11 @@ header{
 	color: #fff;
 	text-decoration: none;
 }
-#bs-example-navbar-collapse-1 li a:hover{
+#w0.navbar{
+	margin-bottom: 0px;
+	border: 0px solid transparent;
+}
+#w0-collapse li a:hover{
 	color:#ff5b23;
 }
 .value_cart input{
@@ -953,7 +957,7 @@ header{
 	.navbar-toggle .icon-bar {
 	    background-color: #ccc;
 	}
-	#bs-example-navbar-collapse-1{
+	#w0-collapse{
 		background-color: #000;
 	    bottom: 0;
 	    height: 100%;
@@ -996,7 +1000,7 @@ header{
 		margin-top: 0;
 		position: absolute;
 	}
-	#bs-example-navbar-collapse-1 li{
+	#w0-collapse li{
 		float: none;
 	    display: block;
 	    position: relative;
@@ -1005,13 +1009,13 @@ header{
 	    border-left: 0px solid #2f2f2f;
 	    border-right: 0px solid #2f2f2f;
 	}
-	#bs-example-navbar-collapse-1 li a{
+	#w0-collapse li a{
 		text-align: center;
 	}
 	.menu_top li a::before{
 		display: none;
 	}
-	.menu_top li a:hover, {
+	.menu_top li a:hover {
 		color:#ff5b23;
 	}
 	.menu_top .navbar-toggle.active:hover .icon-bar {

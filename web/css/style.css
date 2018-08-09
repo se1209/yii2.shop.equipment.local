@@ -435,6 +435,9 @@ header{
 #w0-collapse li a:hover{
 	color:#ff5b23;
 }
+.menu_top #w0{
+	margin-bottom: 0px;
+}
 @media all and (max-width: 1200px) and (min-width: 992px){
 	.ban_block p {
 	    color: #fff;

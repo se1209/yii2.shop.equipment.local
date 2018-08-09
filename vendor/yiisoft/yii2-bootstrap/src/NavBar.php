@@ -116,7 +116,9 @@ class NavBar extends Widget
         echo Html::beginTag($tag, $options);
         if ($this->renderInnerContainer) {
             if (!isset($this->innerContainerOptions['class'])) {
-                Html::addCssClass($this->innerContainerOptions, 'container');
+                // Убрали класс 'content', т.к. он ломает вёрстку при мобильном отражении;
+                //Html::addCssClass($this->innerContainerOptions, 'container');
+                Html::addCssClass($this->innerContainerOptions, '');
             }
             echo Html::beginTag('div', $this->innerContainerOptions);
         }

@@ -15,17 +15,17 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class AppAsset extends AssetBundle
+class DefaultAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
-        'css/style.css',
+        'css/style-list-prod.css',
         'css/font-awesome.min.css',
     ];
     public $js = [
-        'scripts.js',
+        'js/scripts.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
