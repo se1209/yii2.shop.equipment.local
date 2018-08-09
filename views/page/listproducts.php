@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Интернет-магазин снаряжения';
+$this->title = 'Список товаров';
 ?>
 <div class="site-index">
     <p>Текст главной страницы</p>
