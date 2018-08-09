@@ -65,7 +65,6 @@ AppAsset::register($this);
     <div class="container-fluid menu_top">
         <div class="container">
             <div class="row">
-                <nav>
 
                     <?php
                     NavBar::begin([
@@ -99,7 +98,7 @@ AppAsset::register($this);
                     ]);
                     NavBar::end();
                     ?>
-
+                <!--<nav>-->
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <!--<div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -120,7 +119,7 @@ AppAsset::register($this);
                             <li><a href="#">Сувениры</a></li>
                         </ul>
                     </div>--><!-- /.navbar-collapse -->
-                </nav>
+                <!--</nav>-->
             </div>
         </div>
     </div>
