@@ -14,34 +14,45 @@ use app\models\ContactForm;
 class PageController extends Controller
 {
     /**
-Для страницы со списком товаров
- */
+     * Для страницы со списком товаров
+     */
     public function actionListproducts()
     {
         return $this->render('listproducts');
     }
-
     /**
-    Для страницы новостей
+     * Для страницы новостей
      */
     public function actionNews()
     {
         return $this->render('news');
     }
-
     /**
-    Для страницы с контактами;
+     * Для страницы с контактами;
      */
     public function actionContacts()
     {
         return $this->render('contacts');
     }
-
     /**
-    Для страницы входа;
+     * Для страницы входа;
      */
     public function actionLogin()
     {
-        return $this->render('Login');
+        return $this->render('login');
+    }
+    /**
+     * Для страницы регистрации;
+     */
+    public function actionRegistration()
+    {
+        return $this->render('registration');
+    }
+    /**
+     * Для страницы "Обратная связь";
+     */
+    public function actionFormcontact()
+    {
+        return $this->render('formcontact');
     }
 }
