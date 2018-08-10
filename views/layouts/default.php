@@ -82,7 +82,7 @@ DefaultAsset::register($this);
                         ['label' => 'Главная', 'url' => ['/site/index']],
                         ['label' => 'Каталог', 'url' => ['/page/listproducts']],
                         ['label' => 'Новости', 'url' => ['/page/news']],
-                        ['label' => 'Контакты', 'url' => ['/site/contact']],
+                        ['label' => 'Контакты', 'url' => ['/page/contacts']],
                     ],
                 ]);
                 NavBar::end();

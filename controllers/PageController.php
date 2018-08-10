@@ -28,4 +28,12 @@ class PageController extends Controller
     {
         return $this->render('news');
     }
+
+    /**
+    Для страницы с контактами;
+     */
+    public function actionContacts()
+    {
+        return $this->render('contacts');
+    }
 }
