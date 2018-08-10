@@ -27,10 +27,11 @@ $this->title = 'Список товаров';
 
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
     <div class="short_description">
-        <img src="images/prod1.jpg">
+        
+        <img src="images/<?= $categories['img']; ?>">
         <div>
-            <h2>Рюкзаки</h2>
-            <p>В выборе туристического рюкзака необходимо полагаться не только на его внешний вид, но и важные характеристики, такие как его объем, вес, крепления и многие другие. Для разных целей существуют отдельные подгруппы рюкзаков.</p>
+            <h2><?= $categories['name']; ?></h2>
+            <p><?= $categories['description']; ?></p>
         </div>
     </div>
     <div class="row content">

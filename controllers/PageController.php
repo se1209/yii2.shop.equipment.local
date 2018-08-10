@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Categories;
 
 /* Контроллер для страниц сайта */
 class PageController extends Controller
@@ -18,8 +19,18 @@ class PageController extends Controller
      */
     public function actionListproducts()
     {
-        return $this->render('listproducts');
+        $categories = Categories::find()->where(['id' => 1])->asArray()->one();
+        return $this->render('listproducts', compact('categories'));
     }
+
+    /**
+     * Для страницы "Каталог";
+     */
+    public function actionCatalog()
+    {
+        return $this->render('catalog');
+    }
+
     /**
      * Для страницы новостей
      */
@@ -27,6 +38,7 @@ class PageController extends Controller
     {
         return $this->render('news');
     }
+
     /**
      * Для страницы с контактами;
      */
@@ -34,6 +46,7 @@ class PageController extends Controller
     {
         return $this->render('contacts');
     }
+
     /**
      * Для страницы входа;
      */
@@ -41,6 +54,7 @@ class PageController extends Controller
     {
         return $this->render('login');
     }
+
     /**
      * Для страницы регистрации;
      */
@@ -48,6 +62,7 @@ class PageController extends Controller
     {
         return $this->render('registration');
     }
+
     /**
      * Для страницы "Обратная связь";
      */
