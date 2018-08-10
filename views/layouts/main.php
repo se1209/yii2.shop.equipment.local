@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -42,7 +43,7 @@ AppAsset::register($this);
                     <div class="btn_top">
                         <a href="#"><i class="glyphicon glyphicon-map-marker"></i>Обратная связь</a>
                         <a href="#"><i class="glyphicon glyphicon-user"></i>Личный кабинет</a>
-                        <a href="#"><i class="glyphicon glyphicon-lock"></i>Войти</a>
+                        <a href="<?= Url::toRoute('page/login'); ?>"><i class="glyphicon glyphicon-lock"></i>Войти</a>
                     </div>
                     <div class="search_top">
                         <form>

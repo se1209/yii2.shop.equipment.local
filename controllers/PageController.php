@@ -36,4 +36,12 @@ class PageController extends Controller
     {
         return $this->render('contacts');
     }
+
+    /**
+    Для страницы входа;
+     */
+    public function actionLogin()
+    {
+        return $this->render('Login');
+    }
 }
