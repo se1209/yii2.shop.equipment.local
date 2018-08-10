@@ -14,10 +14,18 @@ use app\models\ContactForm;
 class PageController extends Controller
 {
     /**
-        Для страницы со списком товаров
-     */
+Для страницы со списком товаров
+ */
     public function actionListproducts()
     {
         return $this->render('listproducts');
+    }
+
+    /**
+    Для страницы новостей
+     */
+    public function actionNews()
+    {
+        return $this->render('news');
     }
 }
