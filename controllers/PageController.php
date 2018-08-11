@@ -19,8 +19,19 @@ class PageController extends Controller
      */
     public function actionListproducts()
     {
-        $categories = Categories::find()->where(['id' => 1])->asArray()->one();
-        return $this->render('listproducts', compact('categories'));
+        if (isset($_GET['id']) && $_GET['id'] != "" && filter_var($_GET['id'], FILTER_VALIDATE_INT))
+        {
+            $categories = Categories::find()->where(['id' => 1])->asArray()->one();
+
+            if (count($categories) > 0)
+            {
+                return $this->render('listproducts', compact('categories'));
+            }
+        }
+        //else
+        //{
+            return $this->redirect(['page/catalog']);
+        //}
     }
 
     /**
@@ -28,7 +39,8 @@ class PageController extends Controller
      */
     public function actionCatalog()
     {
-        return $this->render('catalog');
+        $categories = Categories::find()->asArray()->all();
+        return $this->render('catalog', compact('categories'));
     }
 
     /**
