@@ -21,17 +21,17 @@ class PageController extends Controller
     {
         if (isset($_GET['id']) && $_GET['id'] != "" && filter_var($_GET['id'], FILTER_VALIDATE_INT))
         {
-            $categories = Categories::find()->where(['id' => 1])->asArray()->one();
+            $categories = Categories::find()->where(['id' => $_GET['id']])->asArray()->one();
 
-            if (count($categories) > 0)
+            if ($categories)
             {
                 return $this->render('listproducts', compact('categories'));
             }
         }
-        //else
-        //{
+        else
+        {
             return $this->redirect(['page/catalog']);
-        //}
+        }
     }
 
     /**
