@@ -26,6 +26,7 @@ $this->title = 'Список товаров';
 </div>
 
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+
     <div class="short_description">
         
         <img src="images/<?= $categories['img']; ?>">
@@ -76,7 +77,45 @@ $this->title = 'Список товаров';
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
+
+        <?php
+            foreach ($products_array as $product_array)
+            {
+        ?>
+                <div class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
+                    <div class="product">
+                        <a href="#" class="product_img">
+                            <?php
+                            if ($product_array['price_old'] != "") {
+                                ?>
+                                <span>- <?php echo 100-intval($product_array['price']*100/$product_array['price_old']); ?>%</span>
+                                <?php
+                            }
+                            ?>
+                            <img src="images/<?= $product_array['img']; ?>">
+                        </a>
+                        <a href="#" class="product_title"><?= $product_array['name']; ?></a>
+                        <div class="product_price">
+                            <span class="price"><?= $product_array['price']; ?> руб</span>
+                            <?php
+                                if ($product_array['price_old'] != "") {
+                                    ?>
+                                    <span class="price_old"><?= $product_array['price_old']; ?> руб</span>
+                                    <?php
+                                }
+                            ?>
+                        </div>
+                        <div class="product_btn">
+                            <a href="#" class="cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
+                            <a href="#" class="mylist">Список желаний</a>
+                        </div>
+                    </div>
+                </div>
+        <?php
+            }
+        ?>
+
+        <!--<div class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
             <div class="product">
                 <a href="#" class="product_img">
                     <span>-10%</span>
@@ -160,6 +199,6 @@ $this->title = 'Список товаров';
                     <a href="#" class="mylist">Список желаний</a>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>

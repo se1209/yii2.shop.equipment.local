@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Categories;
+use app\models\Products;
 
 /* Контроллер для страниц сайта */
 class PageController extends Controller
@@ -25,7 +26,8 @@ class PageController extends Controller
 
             if ($categories)
             {
-                return $this->render('listproducts', compact('categories'));
+                $products_array = Products::find()->where(['category' => $_GET['id']])->asArray()->all();
+                return $this->render('listproducts', compact('categories', 'products_array'));
             }
         }
         else
