@@ -44,7 +44,7 @@ $this->title = 'Список товаров';
                     <h1>Рюкзаки</h1>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 value_prod">
-                    <p>В наличии: 7</p>
+                    <p>В наличии: <?= $count_products; ?></p>
                 </div>
             </div>
         </div>

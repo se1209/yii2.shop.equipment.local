@@ -27,7 +27,8 @@ class PageController extends Controller
             if ($categories)
             {
                 $products_array = Products::find()->where(['category' => $_GET['id']])->asArray()->all();
-                return $this->render('listproducts', compact('categories', 'products_array'));
+                $count_products = count($products_array);
+                return $this->render('listproducts', compact('categories', 'products_array', 'count_products'));
             }
         }
         else
