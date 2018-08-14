@@ -93,4 +93,20 @@ class PageController extends Controller
     {
         return $this->render('formcontact');
     }
+
+    /**
+     * Для страницы "Корзина"
+     */
+    public function actionCart()
+    {
+        return $this->render('cart');
+    }
+
+    /**
+     * Для страницы "Список желаний"
+     */
+    public function actionListorder()
+    {
+        return $this->render('listorder');
+    }
 }
