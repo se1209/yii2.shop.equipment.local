@@ -46,6 +46,14 @@ class PageController extends Controller
     }
 
     /**
+     * Для страницы "Карточка товара";
+     */
+    public function actionProduct()
+    {
+        return $this->render('product');
+    }
+
+    /**
      * Для страницы новостей
      */
     public function actionNews()

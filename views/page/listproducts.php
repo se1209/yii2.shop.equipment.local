@@ -2,6 +2,8 @@
 
 /* @var $this yii\web\View */
 
+use yii\helpers\Url;
+
 $this->title = 'Список товаров';
 ?>
 
@@ -94,7 +96,9 @@ $this->title = 'Список товаров';
                             ?>
                             <img src="images/<?= $product_array['img']; ?>">
                         </a>
-                        <a href="#" class="product_title"><?= $product_array['name']; ?></a>
+                        <a href="<?= Url::toRoute(['page/product', 'id' => $product_array['id']]); ?>" class="product_title">
+                            <?= $product_array['name']; ?>
+                        </a>
                         <div class="product_price">
                             <span class="price"><?= $product_array['price']; ?> руб</span>
                             <?php
