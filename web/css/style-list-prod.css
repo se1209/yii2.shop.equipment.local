@@ -813,7 +813,7 @@ header{
 .view_list_prod i{
 	display: block;
 	font-size: 24px;
-	color:#333;
+	/*color:#333;*/
 }
 .view_list_prod a{
 	text-align: center;
@@ -824,8 +824,11 @@ header{
 .view_list_prod a:hover{
 	text-decoration: none;
 }
-.view_list_prod a:last-child i{
+.view_list_prod a i{
 	color:#ccc;
+}
+.view_list_prod a.active i{
+	color:#333;
 }
 .view_list_prod a:hover i{
 	color:#333;
@@ -905,6 +908,20 @@ header{
 .catalog a:last-child:hover{
 	text-decoration: none;
 	opacity: 0.8;
+}
+
+.view_list .product {
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.view_list .product .product_img {
+	width: 35%;
+	display: block;
+	float: left;
+}
+.view_list .product .desc {
+	float: right;
+	width: 60%;
 }
 
 @media all and (max-width: 1200px) and (min-width: 992px){

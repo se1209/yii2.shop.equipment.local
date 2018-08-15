@@ -28,7 +28,17 @@ class PageController extends Controller
             {
                 $products_array = Products::find()->where(['category' => $_GET['id']])->asArray()->all();
                 $count_products = count($products_array);
-                return $this->render('listproducts', compact('categories', 'products_array', 'count_products'));
+
+                if (isset($_GET['view']) && $_GET['view'] == 1)
+                {
+                    $view = 1;
+                }
+                else
+                {
+                    $view = 0;
+                }
+
+                return $this->render('listproducts', compact('categories', 'products_array', 'count_products', 'view'));
             }
         }
         else
