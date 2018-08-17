@@ -793,6 +793,15 @@ header{
 .value_cart span:hover{
 	opacity: 0.9;
 }
+.sortirovka_and_number_prod .control-label{
+	display: none;
+}
+.sortirovka_and_number_prod .form-group{
+	display: inline-block;
+}
+.field-sortform-number{
+	width: 65px;
+}
 .sortirovka_and_number_prod p{
 	display: inline-block;
 	margin-right: 10px;

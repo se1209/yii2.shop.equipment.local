@@ -3,6 +3,9 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Url;
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
 
 $this->title = 'Список товаров';
 ?>
@@ -51,25 +54,25 @@ $this->title = 'Список товаров';
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 sortirovka_and_number_prod">
-                    <form action="#">
-                        <p><strong>Сортировка по:</strong>
-                            <select name="sortirovka_prod">
-                                <option selected="selected">--</option>
-                                <option value="0">Цене, по возрастанию</option>
-                                <option value="1">Цене, по убыванию</option>
-                                <option value="2">Названию товара, от А до Я</option>
-                                <option value="3">Названию товара, от Я до А</option>
-                            </select>
-                        </p>
-                        <p><strong>Показать:</strong>
-                            <select name="number_prod_str">
-                                <option selected="selected">12</option>
-                                <option value="0">24</option>
-                                <option value="1">48</option>
-                            </select>
-                        </p>
-                        <button type="submit">Go</button>
-                    </form>
+
+                    <?php $form = ActiveForm::begin(); ?>
+                    <p><strong>Сортировка по:</strong><?php echo $form->field($model, 'str')->dropDownList([
+                            '0' => 'Цене, по возрастанию',
+                            '1' => 'Цене, по убыванию',
+                            '2' => 'Названию товара, от А до Я',
+                            '3' => 'Названию товара, от Я до А',
+                        ],$params = [
+                                'prompt' => '--',
+                            ]
+                        );?></p>
+                    <p><strong>Показать:</strong><?php echo $form->field($model, 'number')->dropDownList([
+                            '12' => '12', '24' => '24', '48' => '48'],
+                            $params = [
+                            'options' => ['12' =>['Selected' => true]],
+                        ]);?></p>
+                    <?php echo Html::submitButton('Go');?>
+                    <?php ActiveForm::end(); ?>
+
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs view_list_prod">
                     <p><strong>Вид:</strong>

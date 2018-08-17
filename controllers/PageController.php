@@ -8,7 +8,7 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
-use app\models\ContactForm;
+use app\models\SortForm;
 use app\models\Categories;
 use app\models\Products;
 
@@ -26,6 +26,16 @@ class PageController extends Controller
 
             if ($categories)
             {
+                $model = new SortForm();
+
+                // Обработчик для формы сортировки;
+                if ($model->load(Yii::$app->request->post()) && $model->validate())
+                {
+                    /*echo '<pre>';
+                    print_r($model);
+                    echo '</pre>';*/
+                }
+
                 $products_array = Products::find()->where(['category' => $_GET['id']])->asArray()->all();
                 $count_products = count($products_array);
 
@@ -38,7 +48,7 @@ class PageController extends Controller
                     $view = 0;
                 }
 
-                return $this->render('listproducts', compact('categories', 'products_array', 'count_products', 'view'));
+                return $this->render('listproducts', compact('categories', 'products_array', 'count_products', 'view', 'model'));
             }
         }
         else
